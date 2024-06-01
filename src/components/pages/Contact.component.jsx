@@ -6,10 +6,10 @@ import { useChangeTitle } from "../../utills";
 const Contact = () => {
   useChangeTitle("Get in touch - ");
   return (
-    <section className='text-white bg-gradient-to-r from-yellow-600 to-yellow-700'>
-      <div className=' p-8 pt-28 md:p-16 md:pt-28 flex flex-col gap-4'>
-        <h1 className='text-5xl font-bold'>Get in touch</h1>
-        <p className=''>
+    <section className='text-white bg-gradient-to-r from-yellow-600 to-yellow-700 min-h-screen'>
+      <div className='p-8 pt-28 md:p-16 md:pt-28 flex flex-col gap-4'>
+        <h1 className='text-5xl md:text-6xl font-bold'>Get in touch</h1>
+        <p className='md:text-lg'>
           Want to get in touch? We'd love to hear from you. Here's how you can
           reach us..
         </p>
