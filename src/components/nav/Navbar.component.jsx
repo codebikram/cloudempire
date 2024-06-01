@@ -26,12 +26,12 @@ const Navbar = () => {
   };
   return (
     <>
-      <nav className=' p-4 md:pl-16 md:pr-16 flex justify-between items-center bg-gray-800 text-white fixed top-0 left-0 right-0 shadow-md'>
+      <nav className=' p-3 md:pl-16 md:pr-16 flex justify-between items-center bg-gray-800 text-white fixed top-0 left-0 right-0 shadow-md z-40'>
         <NavLink
           to='/'
           className='font-bold text-3xl bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-800 bg-clip-text text-transparent'
         >
-          <img src={logo} alt='cloud empire logo' className='w-60 h-10' />
+          <img src={logo} alt='cloud empire logo' className='w-52 h-12' />
         </NavLink>
         <button className='md:hidden' onClick={handleClick}>
           {!show ? <GiHamburgerMenu /> : <IoMdClose />}
