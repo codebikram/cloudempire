@@ -14,4 +14,7 @@
   .font-robo{
     font-family: "Roboto", sans-serif;
   }  
+  .padding{
+    @apply p-8 pt-28 md:p-16 md:pt-28 
+  }
 }

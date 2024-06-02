@@ -8,7 +8,7 @@ const Contact = () => {
   // bg-gradient-to-r from-yellow-600 to-yellow-700
   return (
     <section className='text-white min-h-screen bg-gray-800'>
-      <div className='p-8 pt-28 md:p-16 md:pt-28 flex flex-col gap-4'>
+      <div className='padding flex flex-col gap-4'>
         <h1 className='text-5xl md:text-6xl font-bold font-robo'>
           Get in touch
         </h1>

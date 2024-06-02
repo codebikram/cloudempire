@@ -37,13 +37,13 @@ const Home = () => {
   useChangeTitle("");
   return (
     <>
-      <div className='p-8 pt-28 md:p-16 md:pt-28 min-h-screen bg-gray-800 text-white'>
-        <article className='p-4 pt-20 pb-20 grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
+      <div className='padding min-h-screen bg-gray-800 text-white'>
+        <article className='pt-20 pb-20 grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
           {cardData.map((item, i) => (
             <Card key={i} data={item} />
           ))}
         </article>
-        <article className='p-4 pt-20 pb-20 text-white flex flex-col gap-6 flex-wrap'>
+        <article className='pt-20 pb-20 text-white flex flex-col gap-6 flex-wrap '>
           <h1 className='font-robo text-4xl md:text-6xl text-center'>
             Let's work together on your{" "}
             <span className='opacity-60'>next project</span>
@@ -53,9 +53,9 @@ const Home = () => {
             Cutting-Edge Solutions
           </p>
         </article>
-        <hr className='h-2' />
-        <article className='p-4 pt-20 pb-20 text-white flex flex-col gap-6 flex-wrap'>
-          <h2 className='font-robo text-4xl md:text-5xl'>
+        <hr className=' md:mt-20 md:mb-20' />
+        <article className='pt-20 pb-20 text-white flex flex-col gap-6 flex-wrap'>
+          <h2 className='font-robo text-4xl md:text-5xl '>
             Welcome to Cloudempire
           </h2>
           <p className='text-sm md:text-base '>
