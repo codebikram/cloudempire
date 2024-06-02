@@ -5,6 +5,7 @@ import azureLogo from "../../assets/logos/azure_logo.png";
 import salesforce_logo from "../../assets/logos/salesforce-logo.png";
 import mobileWebLogo from "../../assets/logos/mobile_web.jpg";
 import Card from "../card/Card.component";
+import Feature from "../feature/Feature.component";
 
 const cardData = [
   {
@@ -38,13 +39,14 @@ const Home = () => {
   return (
     <>
       <div className='padding min-h-screen bg-gray-800 text-white'>
-        <article className='pt-20 pb-20 grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
+        <article className='pt-16 pb-16 grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
           {cardData.map((item, i) => (
             <Card key={i} data={item} />
           ))}
         </article>
-        <article className='pt-20 pb-20 text-white flex flex-col gap-6 flex-wrap '>
-          <h1 className='font-robo text-4xl md:text-6xl text-center'>
+        <Feature />
+        <article className='pt-16 pb-16 text-white flex flex-col gap-6 flex-wrap '>
+          <h1 className='font-robo text-4xl md:text-6xl text-center font-semibold'>
             Let's work together on your{" "}
             <span className='opacity-60'>next project</span>
           </h1>
@@ -53,9 +55,9 @@ const Home = () => {
             Cutting-Edge Solutions
           </p>
         </article>
-        <hr className=' md:mt-20 md:mb-20' />
-        <article className='pt-20 pb-20 text-white flex flex-col gap-6 flex-wrap'>
-          <h2 className='font-robo text-4xl md:text-5xl '>
+        <hr className=' md:mt-16 md:mb-16' />
+        <article className='pt-16 pb-16 text-white flex flex-col gap-6 flex-wrap'>
+          <h2 className='font-robo text-4xl md:text-5xl font-semibold'>
             Welcome to Cloudempire
           </h2>
           <p className='text-sm md:text-base '>
