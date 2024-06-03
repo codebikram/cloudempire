@@ -26,7 +26,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <nav className=' p-3 md:pl-16 md:pr-16 flex justify-between items-center bg-gray-800 text-white fixed top-0 left-0 right-0 shadow-md z-40'>
+      <nav className='p-3 md:pl-16 md:pr-16 flex justify-between items-center text-white fixed top-0 left-0 right-0 z-40 bg-transparent'>
         <NavLink
           to='/'
           className='font-bold text-3xl bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-800 bg-clip-text text-transparent'
@@ -38,7 +38,7 @@ const Navbar = () => {
         </button>
         <ul className='hidden md:flex md:gap-10'>
           {links.map((item, i) => (
-            <li key={i}>
+            <li key={i} className=''>
               <NavLink
                 to={item.href}
                 className={({ isActive }) =>

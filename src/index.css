@@ -23,9 +23,4 @@
   .figure:hover .show {
     opacity: 1;
   }
-  .alignment {
-    display: grid;
-    grid-template-rows: subgrid;
-    grid-row: 1/3;
-  }
 }

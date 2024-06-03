@@ -6,6 +6,7 @@ import salesforce_logo from "../../assets/logos/salesforce-logo.png";
 import mobileWebLogo from "../../assets/logos/mobile_web.jpg";
 import Card from "../card/Card.component";
 import Feature from "../feature/Feature.component";
+import Slider from "../slider/Slider.component";
 
 const cardData = [
   {
@@ -36,9 +37,11 @@ const cardData = [
 
 const Home = () => {
   useChangeTitle("");
+
   return (
     <>
-      <div className='padding min-h-screen bg-gray-800 text-white'>
+      <Slider />
+      <div className='padding pt-20 min-h-screen bg-gray-800 text-white'>
         <article className='pt-16 pb-16 grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
           {cardData.map((item, i) => (
             <Card key={i} data={item} />
