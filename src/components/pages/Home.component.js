@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React from "react";
 import { useChangeTitle } from "../../utills";
 import awsLogo from "../../assets/logos/aws_logo.png";
 import azureLogo from "../../assets/logos/azure_logo.png";
@@ -7,7 +7,7 @@ import mobileWebLogo from "../../assets/logos/mobile_web.jpg";
 import Card from "../card/Card.component";
 import Slider from "../slider/Slider.component";
 import TextSection from "../text-section/TextSection.component";
-import feature from "../feature/Feature.component";
+import Feature from "../feature/Feature.component";
 const cardData = [
   {
     title: "Everything About Salesforce",
