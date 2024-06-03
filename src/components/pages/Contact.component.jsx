@@ -18,7 +18,7 @@ const Contact = () => {
         </p>
       </div>
       <div className='flex flex-col md:flex-row text-slate-800 p-8 md:p-16 md:pt-0 gap-12 '>
-        <article className='bg-gradient-to-b from-gray-500 to-gray-700 text-white flex-1 rounded-lg shadow-md'>
+        <article className='bg-gradient-to-b from-gray-500 to-gray-700 text-white flex-1 rounded-lg shadow-md hover:scale-105 duration-300 hover:shadow-lg'>
           <div className='p-8 flex flex-col gap-4'>
             <div className='text-8xl'>
               <CiMail className='m-auto' />
@@ -40,7 +40,7 @@ const Contact = () => {
             </p>
           </div>
         </article>
-        <article className='bg-gradient-to-b from-gray-500 to-gray-700 text-white flex-1  rounded-lg shadow-md'>
+        <article className='bg-gradient-to-b from-gray-500 to-gray-700 text-white flex-1  rounded-lg shadow-md hover:scale-105 duration-300 hover:shadow-lg'>
           <div className='p-8 flex flex-col gap-6'>
             <div className='text-8xl'>
               <LiaPeopleCarrySolid className='m-auto' />
