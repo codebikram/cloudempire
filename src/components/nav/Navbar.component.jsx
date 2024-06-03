@@ -5,6 +5,9 @@ import { NavLink, Outlet } from "react-router-dom";
 import Footer from "../footer/Footer.component";
 import logo from "../../assets/Cloudempire_Logo.png";
 const Navbar = () => {
+  const [navBar, setNavBar] = useState(false);
+  const [show, setShow] = useState(false);
+
   const links = [
     {
       label: "Home",
@@ -19,14 +22,33 @@ const Navbar = () => {
       href: "/contact",
     },
   ];
-  const [show, setShow] = useState(false);
 
   const handleClick = () => {
-    setShow(!show);
+    setShow((prev) => !prev);
+    if (!show) {
+      setNavBar(true);
+    } else {
+      setNavBar(false);
+    }
   };
+  const changeBackgroundColor = () => {
+    if (window.scrollY >= 75) {
+      setNavBar(true);
+    } else {
+      setNavBar(false);
+    }
+  };
+  window.addEventListener("scroll", changeBackgroundColor);
+
   return (
     <>
-      <nav className='p-3 md:pl-16 md:pr-16 flex justify-between items-center text-white fixed top-0 left-0 right-0 z-40 bg-transparent'>
+      <nav
+        className={
+          navBar
+            ? "p-3 md:pl-16 md:pr-16 flex justify-between items-center text-white fixed top-0 left-0 right-0 z-40 bg-gray-800 shadow-md"
+            : "p-3 md:pl-16 md:pr-16 flex justify-between items-center text-white fixed top-0 left-0 right-0 z-40 bg-transparent"
+        }
+      >
         <NavLink
           to='/'
           className='font-bold text-3xl bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-800 bg-clip-text text-transparent'
