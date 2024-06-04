@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css/bundle";
@@ -55,59 +54,22 @@ const Slider = () => {
               }}
             >
               <div className='text-white flex flex-col gap-6 p-10 sm:p-20 lg:p-28'>
-                <motion.h1
-                  variants={{
-                    start: { opacity: 0, y: 20 },
-                    end: { opacity: 1, y: 0 },
-                  }}
-                  initial='start'
-                  whileInView='end'
-                  transition={{
-                    duration: 0.5,
-                    ease: "easeIn",
-                    delay: 0.25,
-                  }}
+                <h1
                   className='text-4xl sm:text-5xl lg:text-7xl font-bold
                   text-robo'
                 >
                   {item.text}
-                </motion.h1>
-                <motion.p
-                  variants={{
-                    start: { opacity: 0, y: 20 },
-                    end: { opacity: 1, y: 0 },
-                  }}
-                  initial='start'
-                  whileInView='end'
-                  transition={{
-                    duration: 0.5,
-                    ease: "easeIn",
-                    delay: 0.5,
-                  }}
-                  className='text-base sm:text-lg lg:text-xl font-semibold'
-                >
+                </h1>
+                <p className='text-base sm:text-lg lg:text-xl font-semibold'>
                   {item.description}
-                </motion.p>
-                <motion.button
-                  variants={{
-                    start: { opacity: 0, y: 20 },
-                    end: { opacity: 1, y: 0 },
-                  }}
-                  initial='start'
-                  whileInView='end'
+                </p>
+                <button
                   className='text-sm md:text-base bg-yellow-600 self-start
                   text-white font-bold rounded-md p-4 hover:from-yellow-700
                   hover:bg-yellow-700'
-                  transition={{
-                    duration: 0.75,
-                    type: "spring",
-                    stiffness: 400,
-                    damping: 10,
-                    delay: 0.75,
-                  }}
                 >
                   Get a Free Consultation
-                </motion.button>
+                </button>
               </div>
             </div>
           </SwiperSlide>
@@ -118,3 +80,11 @@ const Slider = () => {
 };
 
 export default Slider;
+
+// initial={{ opacity: 0, y: 20 }}
+// whileInView={{ opacity: 1, y: 0 }}
+// transition={{
+//   duration: 0.5,
+//   ease: "easeIn",
+//   delay: 0.25,
+// }}
