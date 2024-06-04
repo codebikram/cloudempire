@@ -41,15 +41,13 @@ const Home = () => {
   return (
     <>
       <Slider />
-      <div className='padding pt-20 min-h-screen bg-gray-800 text-white'>
-        <article className='pt-16 pb-16 grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
+      <div className='padding min-h-screen bg-gray-800 text-white'>
+        <article className='pb-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
           {cardData.map((item, i) => (
             <Card key={i} data={item} />
           ))}
         </article>
-
         <Feature />
-
         <TextSection />
       </div>
     </>

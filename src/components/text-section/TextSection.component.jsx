@@ -5,8 +5,8 @@ const TextSection = () => {
     <>
       <article className='pt-16 pb-16 text-white flex flex-col gap-6 flex-wrap '>
         <h1 className='font-robo text-4xl md:text-6xl text-center font-semibold'>
-          Let's work together on your{" "}
-          <span className='opacity-60'>next project</span>
+          Let's work together on your <span className='opacity-60'>next</span>{" "}
+          project
         </h1>
         <p className='text-sm md:text-base text-center '>
           Your Vision, Our Expertise Unleashing Potential with Customized
@@ -16,7 +16,7 @@ const TextSection = () => {
       <hr className=' md:mt-16 md:mb-16' />
       <article className='pt-16 pb-16 text-white flex flex-col gap-6 flex-wrap'>
         <h2 className='font-robo text-4xl md:text-5xl font-semibold'>
-          Welcome to Cloudempire
+          Welcome to Cloud<span className='opacity-60'>Empire</span>
         </h2>
         <p className='text-sm md:text-base '>
           CloudEmpire stands out in cloud computing with a focus on

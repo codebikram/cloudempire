@@ -29,6 +29,7 @@ const Navbar = () => {
       setNavBar(true);
     } else {
       setNavBar(false);
+      changeBackgroundColor();
     }
   };
   const changeBackgroundColor = () => {
@@ -45,8 +46,8 @@ const Navbar = () => {
       <nav
         className={
           navBar
-            ? "p-3 md:pl-16 md:pr-16 flex justify-between items-center text-white fixed top-0 left-0 right-0 z-40 bg-gray-800 shadow-md duration-300"
-            : "p-3 md:pl-16 md:pr-16 flex justify-between items-center text-white fixed top-0 left-0 right-0 z-40 bg-transparent duration-300"
+            ? "p-3 md:pl-16 md:pr-16 flex justify-between items-center text-white fixed top-0 left-0 right-0 z-40 bg-gray-800 shadow-md"
+            : "p-3 md:pl-16 md:pr-16 flex justify-between items-center text-white fixed top-0 left-0 right-0 z-40 bg-transparent"
         }
       >
         <NavLink

@@ -1,15 +1,43 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 const Card = ({ data }) => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+  const controls = useAnimation();
+  useEffect(() => {
+    if (inView) {
+      controls.start("end");
+    }
+  }, [inView, controls]);
+
   return (
-    <figure className='flex flex-wrap flex-col gap-4 bg-gradient-to-b from-gray-500 to-gray-700  p-4 rounded-lg shadow-md hover:scale-105 duration-300 hover:shadow-lg cursor-pointer'>
+    <motion.figure
+      ref={ref}
+      className='flex flex-wrap flex-col gap-4 bg-gradient-to-b from-gray-500 to-gray-700  p-4 rounded-lg shadow-md cursor-pointer relative'
+      variants={{
+        start: { opacity: 0, y: 100, scale: 0.92 },
+        end: { opacity: 1, y: 0, scale: 1 },
+      }}
+      initial='start'
+      animate={controls}
+      transition={{ duration: 0.5, delay: 0.25 }}
+    >
       <div>
         <img src={data.imgUrl} alt={data.title} className='w-20 h-20' />
       </div>
       <h2 className='font-robo text-2xl font-bold'>{data.title}</h2>
       <p className='text-sm md:text-base'>{data.description}</p>
-    </figure>
+    </motion.figure>
   );
 };
 
 export default Card;
+
+// <motion.div
+//   className='absolute left-0 right-0 top-1 bottom-1 bg-yellow-500'
+//   variants={{ start: { left: 0 }, end: { left: "100%" } }}
+//   initial='start'
+//   animate={slideControls}
+//   transition={{ duration: 0.5, ease: "easeIn" }}
+// ></motion.div>
