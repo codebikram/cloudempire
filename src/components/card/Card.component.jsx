@@ -33,11 +33,3 @@ const Card = ({ data }) => {
 };
 
 export default Card;
-
-// <motion.div
-//   className='absolute left-0 right-0 top-1 bottom-1 bg-yellow-500'
-//   variants={{ start: { left: 0 }, end: { left: "100%" } }}
-//   initial='start'
-//   animate={slideControls}
-//   transition={{ duration: 0.5, ease: "easeIn" }}
-// ></motion.div>

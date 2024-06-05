@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css/bundle";
 import slider1 from "../../assets/slider/slider1.jpeg";
 import slider2 from "../../assets/slider/slider2.jpeg";
 import slider3 from "../../assets/slider/slider3.jpeg";
+import Modal from "../modal/Modal.component";
 
 const Slider = () => {
+  const [showModal, setShowModal] = useState(false);
   const sliderData = [
     {
       text: "Get a premium class service",
@@ -28,7 +30,9 @@ const Slider = () => {
       url: slider2,
     },
   ];
-
+  const handleClick = () => {
+    setShowModal(true);
+  };
   return (
     <div>
       <Swiper
@@ -64,6 +68,7 @@ const Slider = () => {
                   {item.description}
                 </p>
                 <button
+                  onClick={handleClick}
                   className='text-sm md:text-base bg-yellow-600 self-start
                   text-white font-bold rounded-md p-4 hover:from-yellow-700
                   hover:bg-yellow-700'
@@ -75,16 +80,9 @@ const Slider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <Modal showModal={showModal} setShowModal={setShowModal} />
     </div>
   );
 };
 
 export default Slider;
-
-// initial={{ opacity: 0, y: 20 }}
-// whileInView={{ opacity: 1, y: 0 }}
-// transition={{
-//   duration: 0.5,
-//   ease: "easeIn",
-//   delay: 0.25,
-// }}
