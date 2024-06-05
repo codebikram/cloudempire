@@ -26,13 +26,13 @@ export default function Modal({ showModal, setShowModal }) {
     <>
       {showModal ? (
         <>
-          <div className='justify-center md:items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'>
+          <div className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'>
             <div className='relative w-auto my-6 mx-auto '>
               {/*content*/}
               <div className='border-0 rounded-lg shadow-lg relative flex flex-col w-full sm:w-[400px] md:w-[500px] bg-black text-white outline-none focus:outline-none'>
                 {/*header*/}
-                <div className='flex items-center gap-16 sm:justify-between p-5 border-b border-solid border-yellowGray-200 rounded-t'>
-                  <h3 className='text-2xl font-semibold text-yellow-600'>
+                <div className='flex items-center gap-8 sm:justify-between p-5 border-b border-solid border-yellowGray-200 rounded-t'>
+                  <h3 className='text-lg sm:text-2xl font-semibold text-yellow-600'>
                     Get a Free Consultation
                   </h3>
                   <button
@@ -58,7 +58,7 @@ export default function Modal({ showModal, setShowModal }) {
                   >
                     {({ errors, touched }) => (
                       <Form className='flex items-center justify-center flex-col p-3 w-full'>
-                        <div className='relative z-0 w-full mb-5 group'>
+                        <div className='relative z-0 w-full mb-6 group'>
                           <Field
                             type='text'
                             name='service'
@@ -84,7 +84,7 @@ export default function Modal({ showModal, setShowModal }) {
                             </div>
                           ) : null}
                         </div>
-                        <div className='relative z-0 w-full mb-5 group'>
+                        <div className='relative z-0 w-full mb-6 group'>
                           <Field
                             type='text'
                             name='name'
@@ -110,7 +110,7 @@ export default function Modal({ showModal, setShowModal }) {
                             </div>
                           ) : null}
                         </div>
-                        <div className='relative z-0 w-full    mb-5 group'>
+                        <div className='relative z-0 w-full    mb-6 group'>
                           <Field
                             type='email'
                             name='email'
@@ -136,7 +136,7 @@ export default function Modal({ showModal, setShowModal }) {
                             </div>
                           ) : null}
                         </div>
-                        <div className='relative z-0 w-full    mb-5 group'>
+                        <div className='relative z-0 w-full    mb-6 group'>
                           <Field
                             as='textarea'
                             name='message'
@@ -162,7 +162,7 @@ export default function Modal({ showModal, setShowModal }) {
                             </div>
                           ) : null}
                         </div>
-                        <div className='relative z-0 w-full    mb-5 group'>
+                        <div className='relative z-0 w-full    mb-6 group'>
                           <Field
                             type='date'
                             name='date'
@@ -188,7 +188,7 @@ export default function Modal({ showModal, setShowModal }) {
                             </div>
                           ) : null}
                         </div>
-                        <div className='relative z-0 w-full    mb-5 group'>
+                        <div className='relative z-0 w-full    mb-6 group'>
                           <Field
                             type='time'
                             name='time'
