@@ -31,7 +31,7 @@ export default function Modal({ showModal, setShowModal }) {
               {/*content*/}
               <div className='border-0 rounded-lg shadow-lg relative flex flex-col w-full sm:w-[400px] md:w-[500px] bg-black text-white outline-none focus:outline-none'>
                 {/*header*/}
-                <div className='flex items-center gap-8 sm:justify-between p-5 border-b border-solid border-yellowGray-200 rounded-t'>
+                <div className='flex items-center gap-16 sm:justify-between p-5 border-b border-solid border-yellowGray-200 rounded-t'>
                   <h3 className='text-lg sm:text-2xl font-semibold text-yellow-600'>
                     Get a Free Consultation
                   </h3>
