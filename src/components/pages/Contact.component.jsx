@@ -1,11 +1,11 @@
-import React from "react";
-// import ContactCard from "../contact/ContactCard.component";
+import React, { useState } from "react";
 import { LiaPeopleCarrySolid } from "react-icons/lia";
 import { CiMail } from "react-icons/ci";
 import { useChangeTitle } from "../../utills";
+import Modal from "../modal/Modal.component";
 const Contact = () => {
+  const [showModal, setShowModal] = useState(false);
   useChangeTitle("Get in touch - ");
-  // bg-gradient-to-r from-yellow-600 to-yellow-700
   return (
     <section className='text-white min-h-screen bg-gray-800'>
       <div className='padding flex flex-col gap-4'>
@@ -52,12 +52,18 @@ const Contact = () => {
               Need guidance or have a question? We're here to help. Reach out
               for a consultation and let's explore the solutions together.
             </p>
-            <button className='bg-yellow-600  text-white font-bold rounded-md p-4 hover:from-yellow-700 hover:bg-yellow-700'>
+            <button
+              className='bg-yellow-600  text-white font-bold rounded-md p-4 hover:from-yellow-700 hover:bg-yellow-700'
+              onClick={() => {
+                setShowModal(true);
+              }}
+            >
               Get a Free Consultation
             </button>
           </div>
         </article>
       </div>
+      <Modal showModal={showModal} setShowModal={setShowModal} />
     </section>
   );
 };

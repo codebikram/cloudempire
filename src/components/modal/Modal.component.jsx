@@ -60,14 +60,45 @@ export default function Modal({ showModal, setShowModal }) {
                       <Form className='flex items-center justify-center flex-col p-3 w-full'>
                         <div className='relative z-0 w-full mb-6 group'>
                           <Field
-                            type='text'
+                            as='select'
                             name='service'
                             id='service'
-                            className='block py-2.5 px-0 w-full text-sm text-gray-300 bg-transparent border-0 border-b-2 
+                            className='block py-2.5 px-2 w-full text-sm text-gray-300 bg-transparent border-0 border-b-2 
                   border-gray-300 appearance-none 
                      focus:outline-none focus:ring-0 focus:border-yellow-600 peer'
                             placeholder=' '
-                          />
+                          >
+                            <option value='salesforce' className='bg-black'>
+                              Salesforce
+                            </option>
+                            <option value='aws' className='bg-black'>
+                              AWS
+                            </option>
+                            <option value='azure' className='bg-black'>
+                              Azure
+                            </option>
+                            <option value='react' className='bg-black'>
+                              React
+                            </option>
+                            <option value='nintex' className='bg-black'>
+                              Nintex
+                            </option>
+                            <option
+                              value='salesforce industries'
+                              className='bg-black'
+                            >
+                              Salesforce Industries (Vlocity)
+                            </option>
+                            <option value='mulesoft' className='bg-black'>
+                              Mulesoft
+                            </option>
+                            <option value='ci/cd' className='bg-black'>
+                              CI/CD Pipeline
+                            </option>
+                            <option value='conga' className='bg-black'>
+                              Conga
+                            </option>
+                          </Field>
                           <label
                             htmlFor='service'
                             className='peer-focus:font-medium absolute text-sm text-gray-300
@@ -89,7 +120,7 @@ export default function Modal({ showModal, setShowModal }) {
                             type='text'
                             name='name'
                             id='name'
-                            className='block py-2.5 px-0 w-full text-sm text-gray-300 bg-transparent border-0 border-b-2 
+                            className='block py-2.5 px-2 w-full text-sm text-gray-300 bg-transparent border-0 border-b-2 
                   border-gray-300 appearance-none 
                      focus:outline-none focus:ring-0 focus:border-yellow-600 peer'
                             placeholder=' '
@@ -115,9 +146,9 @@ export default function Modal({ showModal, setShowModal }) {
                             type='email'
                             name='email'
                             id='email'
-                            className='block py-2.5 px-0 w-full text-sm text-gray-300 bg-transparent border-0 border-b-2 
-                  border-gray-300 appearance-none 
-                     focus:outline-none focus:ring-0 focus:border-yellow-600 peer'
+                            className='block py-2.5 px-2 w-full text-sm text-gray-300 bg-transparent border-0 border-b-2 
+                            border-gray-300 appearance-none 
+                               focus:outline-none focus:ring-0 focus:border-yellow-600 peer'
                             placeholder=' '
                           />
                           <label
@@ -141,7 +172,7 @@ export default function Modal({ showModal, setShowModal }) {
                             as='textarea'
                             name='message'
                             id='message'
-                            className='block py-2.5 px-0 w-full text-sm text-gray-300 bg-transparent border-0 border-b-2 
+                            className='block py-2.5 px-2 w-full text-sm text-gray-300 bg-transparent border-0 border-b-2 
                   border-gray-300 appearance-none 
                      focus:outline-none focus:ring-0 focus:border-yellow-600 peer'
                             placeholder=' '
@@ -162,12 +193,12 @@ export default function Modal({ showModal, setShowModal }) {
                             </div>
                           ) : null}
                         </div>
-                        <div className='relative z-0 w-full    mb-6 group'>
+                        <div className='relative z-0 w-full mb-6 group'>
                           <Field
                             type='date'
                             name='date'
                             id='date'
-                            className='block py-2.5 px-0 w-full text-sm text-gray-300 bg-transparent border-0 border-b-2 
+                            className='block py-2.5 px-2 w-full text-sm text-gray-300 bg-transparent border-0 border-b-2 
                   border-gray-300 appearance-none 
                      focus:outline-none focus:ring-0 focus:border-yellow-600 peer'
                             placeholder=' '
@@ -193,7 +224,7 @@ export default function Modal({ showModal, setShowModal }) {
                             type='time'
                             name='time'
                             id='time'
-                            className='block py-2.5 px-0 w-full text-sm text-gray-300 bg-transparent border-0 border-b-2 
+                            className='block py-2.5 px-2 w-full text-sm text-gray-300 bg-transparent border-0 border-b-2 
                   border-gray-300 appearance-none 
                      focus:outline-none focus:ring-0 focus:border-yellow-600 peer'
                             placeholder=' '
