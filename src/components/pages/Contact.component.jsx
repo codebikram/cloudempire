@@ -3,6 +3,7 @@ import { LiaPeopleCarrySolid } from "react-icons/lia";
 import { CiMail } from "react-icons/ci";
 import { useChangeTitle } from "../../utills";
 import Modal from "../modal/Modal.component";
+
 const Contact = () => {
   const [showModal, setShowModal] = useState(false);
   useChangeTitle("Get in touch - ");

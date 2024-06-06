@@ -9,6 +9,7 @@ import Modal from "../modal/Modal.component";
 
 const Slider = () => {
   const [showModal, setShowModal] = useState(false);
+
   const sliderData = [
     {
       text: "Get a premium class service",

@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { IoMdClose } from "react-icons/io";
+import { motion } from "framer-motion";
 
 export default function Modal({ showModal, setShowModal }) {
   useEffect(() => {
@@ -17,17 +18,22 @@ export default function Modal({ showModal, setShowModal }) {
   const validationSchema = Yup.object().shape({
     email: Yup.string()
       .email("Enter a valid email!")
-      .required("email is required!")
+      .required("Email is required!")
       .matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i, "Invalid email"),
-    password: Yup.string()
-      .required("password is required")
-      .min(8, "Your password should have at least 8 charcter!"),
+    name: Yup.string()
+      .required("Name is required!")
+      .min(2, "Your name should have at least 2 charcters!"),
   });
   return ReactDOM.createPortal(
     <>
       {showModal ? (
         <>
-          <div className='flex justify-center items-center overflow-x-hidden overflow-y-scroll fixed inset-0 z-50 outline-none focus:outline-none min-h-full'>
+          <motion.div
+            initial={{ opacity: 0, y: -80 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, ease: "easeIn" }}
+            className='flex justify-center overflow-x-hidden overflow-y-auto absolute top-0 left-0 right-0 h-screen z-50 outline-none focus:outline-none '
+          >
             <div className='relative w-auto my-6 mx-auto max-w-3xl'>
               {/*content*/}
               <div className='border-0 rounded-lg shadow-lg relative flex flex-col w-full  bg-gray-800 text-white outline-none focus:outline-none'>
@@ -38,7 +44,9 @@ export default function Modal({ showModal, setShowModal }) {
                   </h3>
                   <button
                     className=' font-bold text-2xl'
-                    onClick={() => setShowModal(false)}
+                    onClick={() => {
+                      setShowModal(false);
+                    }}
                   >
                     <IoMdClose />
                   </button>
@@ -59,7 +67,7 @@ export default function Modal({ showModal, setShowModal }) {
                   >
                     {({ errors, touched }) => (
                       <Form className='flex items-center justify-center flex-col p-3 w-full'>
-                        <div className='relative z-0 w-full mb-10 md:mb-5  '>
+                        <div className='relative z-0 w-full  mb-8    '>
                           <Field
                             as='select'
                             name='service'
@@ -68,6 +76,7 @@ export default function Modal({ showModal, setShowModal }) {
               border-gray-300 appearance-none 
                  focus:outline-none focus:ring-0 focus:border-yellow-600 peer'
                             placeholder=' '
+                            autoComplete='off'
                           >
                             <option value='salesforce' className='bg-gray-900'>
                               Salesforce
@@ -116,7 +125,7 @@ export default function Modal({ showModal, setShowModal }) {
                             </div>
                           ) : null}
                         </div>
-                        <div className='relative z-0 w-full mb-10 md:mb-5  '>
+                        <div className='relative z-0 w-full mb-8'>
                           <Field
                             type='text'
                             name='name'
@@ -125,6 +134,7 @@ export default function Modal({ showModal, setShowModal }) {
               border-gray-300 appearance-none 
                  focus:outline-none focus:ring-0 focus:border-yellow-600 peer'
                             placeholder=' '
+                            autoComplete='off'
                           />
                           <label
                             htmlFor='name'
@@ -142,7 +152,7 @@ export default function Modal({ showModal, setShowModal }) {
                             </div>
                           ) : null}
                         </div>
-                        <div className='relative z-0 w-full mb-10 md:mb-5  '>
+                        <div className='relative z-0 w-full  mb-8    '>
                           <Field
                             type='email'
                             name='email'
@@ -151,6 +161,7 @@ export default function Modal({ showModal, setShowModal }) {
                         border-gray-300 appearance-none 
                            focus:outline-none focus:ring-0 focus:border-yellow-600 peer'
                             placeholder=' '
+                            autoComplete='off'
                           />
                           <label
                             htmlFor='email'
@@ -168,7 +179,7 @@ export default function Modal({ showModal, setShowModal }) {
                             </div>
                           ) : null}
                         </div>
-                        <div className='relative z-0 w-full    mb-10 md:mb-5  '>
+                        <div className='relative z-0 w-full     mb-8    '>
                           <Field
                             as='textarea'
                             rows='3'
@@ -178,6 +189,7 @@ export default function Modal({ showModal, setShowModal }) {
               border-gray-300 appearance-none 
                  focus:outline-none focus:ring-0 focus:border-yellow-600 peer'
                             placeholder=' '
+                            autoComplete='off'
                           />
                           <label
                             htmlFor='message'
@@ -195,7 +207,7 @@ export default function Modal({ showModal, setShowModal }) {
                             </div>
                           ) : null}
                         </div>
-                        <div className='relative z-0 w-full mb-10 md:mb-5  '>
+                        <div className='relative z-0 w-full  mb-8    '>
                           <Field
                             type='date'
                             name='date'
@@ -204,6 +216,7 @@ export default function Modal({ showModal, setShowModal }) {
               border-gray-300 appearance-none 
                  focus:outline-none focus:ring-0 focus:border-yellow-600 peer'
                             placeholder=' '
+                            autoComplete='off'
                           />
                           <label
                             htmlFor='date'
@@ -221,7 +234,7 @@ export default function Modal({ showModal, setShowModal }) {
                             </div>
                           ) : null}
                         </div>
-                        <div className='relative z-0 w-full    mb-10 md:mb-5  '>
+                        <div className='relative z-0 w-full     mb-8    '>
                           <Field
                             type='time'
                             name='time'
@@ -230,6 +243,7 @@ export default function Modal({ showModal, setShowModal }) {
               border-gray-300 appearance-none 
                  focus:outline-none focus:ring-0 focus:border-yellow-600 peer'
                             placeholder=' '
+                            autoComplete='off'
                           />
                           <label
                             htmlFor='time'
@@ -260,7 +274,7 @@ export default function Modal({ showModal, setShowModal }) {
                 {/*footer*/}
               </div>
             </div>
-          </div>
+          </motion.div>
           <div className='opacity-25 fixed inset-0 z-40 bg-black'></div>
         </>
       ) : null}
