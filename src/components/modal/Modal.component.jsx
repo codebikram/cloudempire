@@ -26,13 +26,13 @@ export default function Modal({ showModal, setShowModal }) {
     <>
       {showModal ? (
         <>
-          <div className='justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none'>
-            <div className='relative w-auto my-6 mx-auto '>
+          <div className='flex justify-center items-center overflow-auto fixed inset-0 z-50 outline-none focus:outline-none'>
+            <div className='relative w-auto my-6 mx-auto max-w-3xl'>
               {/*content*/}
-              <div className='border-0 rounded-lg shadow-lg relative flex flex-col w-full sm:w-[400px] md:w-[500px] bg-black text-white outline-none focus:outline-none'>
+              <div className='border-0 rounded-lg shadow-lg relative flex flex-col w-full sm:w-[400px] md:w-[500px] bg-gray-800 text-white outline-none focus:outline-none'>
                 {/*header*/}
                 <div className='flex items-center gap-16 sm:justify-between p-5 border-b border-solid border-yellowGray-200 rounded-t'>
-                  <h3 className='text-lg sm:text-2xl font-semibold text-yellow-600'>
+                  <h3 className='text-xl sm:text-2xl font-semibold text-yellow-600'>
                     Get a Free Consultation
                   </h3>
                   <button
@@ -58,50 +58,50 @@ export default function Modal({ showModal, setShowModal }) {
                   >
                     {({ errors, touched }) => (
                       <Form className='flex items-center justify-center flex-col p-3 w-full'>
-                        <div className='relative z-0 w-full mb-6 group'>
+                        <div className='relative z-0 w-full mb-5  '>
                           <Field
                             as='select'
                             name='service'
                             id='service'
-                            className='block py-2.5 px-2 w-full text-sm text-gray-300 bg-transparent border-0 border-b-2 
+                            className='block py-2.5 px-0 w-full text-lg md:text-sm text-gray-300 bg-transparent border-0 border-b-2 
                   border-gray-300 appearance-none 
                      focus:outline-none focus:ring-0 focus:border-yellow-600 peer'
                             placeholder=' '
                           >
-                            <option value='salesforce' className='bg-black'>
+                            <option value='salesforce' className='bg-gray-900'>
                               Salesforce
                             </option>
-                            <option value='aws' className='bg-black'>
+                            <option value='aws' className='bg-gray-900'>
                               AWS
                             </option>
-                            <option value='azure' className='bg-black'>
+                            <option value='azure' className='bg-gray-900'>
                               Azure
                             </option>
-                            <option value='react' className='bg-black'>
+                            <option value='react' className='bg-gray-900'>
                               React
                             </option>
-                            <option value='nintex' className='bg-black'>
+                            <option value='nintex' className='bg-gray-900'>
                               Nintex
                             </option>
                             <option
                               value='salesforce industries'
-                              className='bg-black'
+                              className='bg-gray-900'
                             >
                               Salesforce Industries (Vlocity)
                             </option>
-                            <option value='mulesoft' className='bg-black'>
+                            <option value='mulesoft' className='bg-gray-900'>
                               Mulesoft
                             </option>
-                            <option value='ci/cd' className='bg-black'>
+                            <option value='ci/cd' className='bg-gray-900'>
                               CI/CD Pipeline
                             </option>
-                            <option value='conga' className='bg-black'>
+                            <option value='conga' className='bg-gray-900'>
                               Conga
                             </option>
                           </Field>
                           <label
                             htmlFor='service'
-                            className='peer-focus:font-medium absolute text-sm text-gray-300
+                            className='peer-focus:font-medium absolute text-lg md:text-sm text-gray-300
                    duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] 
                   peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto 
                   peer-focus:text-yellow-600 peer-focus:dark:text-yellow-500 peer-placeholder-shown:scale-100 
@@ -115,19 +115,19 @@ export default function Modal({ showModal, setShowModal }) {
                             </div>
                           ) : null}
                         </div>
-                        <div className='relative z-0 w-full mb-6 group'>
+                        <div className='relative z-0 w-full mb-5  '>
                           <Field
                             type='text'
                             name='name'
                             id='name'
-                            className='block py-2.5 px-2 w-full text-sm text-gray-300 bg-transparent border-0 border-b-2 
+                            className='block py-2.5 px-0 w-full text-lg md:text-sm text-gray-300 bg-transparent border-0 border-b-2 
                   border-gray-300 appearance-none 
                      focus:outline-none focus:ring-0 focus:border-yellow-600 peer'
                             placeholder=' '
                           />
                           <label
                             htmlFor='name'
-                            className='peer-focus:font-medium absolute text-sm text-gray-300
+                            className='peer-focus:font-medium absolute text-lg md:text-sm text-gray-300
                    duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] 
                   peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto 
                   peer-focus:text-yellow-600 peer-focus:dark:text-yellow-500 peer-placeholder-shown:scale-100 
@@ -141,19 +141,19 @@ export default function Modal({ showModal, setShowModal }) {
                             </div>
                           ) : null}
                         </div>
-                        <div className='relative z-0 w-full    mb-6 group'>
+                        <div className='relative z-0 w-full mb-5  '>
                           <Field
                             type='email'
                             name='email'
                             id='email'
-                            className='block py-2.5 px-2 w-full text-sm text-gray-300 bg-transparent border-0 border-b-2 
+                            className='block py-2.5 px-0 w-full text-lg md:text-sm text-gray-300 bg-transparent border-0 border-b-2 
                             border-gray-300 appearance-none 
                                focus:outline-none focus:ring-0 focus:border-yellow-600 peer'
                             placeholder=' '
                           />
                           <label
                             htmlFor='email'
-                            className='peer-focus:font-medium absolute text-sm text-gray-300
+                            className='peer-focus:font-medium absolute text-lg md:text-sm text-gray-300
                    duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] 
                   peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto 
                   peer-focus:text-yellow-600 peer-focus:dark:text-yellow-500 peer-placeholder-shown:scale-100 
@@ -167,19 +167,20 @@ export default function Modal({ showModal, setShowModal }) {
                             </div>
                           ) : null}
                         </div>
-                        <div className='relative z-0 w-full    mb-6 group'>
+                        <div className='relative z-0 w-full    mb-5  '>
                           <Field
                             as='textarea'
+                            rows='3'
                             name='message'
                             id='message'
-                            className='block py-2.5 px-2 w-full text-sm text-gray-300 bg-transparent border-0 border-b-2 
+                            className='block py-2.5 px-0 w-full text-lg md:text-sm text-gray-300 bg-transparent border-0 border-b-2 
                   border-gray-300 appearance-none 
                      focus:outline-none focus:ring-0 focus:border-yellow-600 peer'
                             placeholder=' '
                           />
                           <label
                             htmlFor='message'
-                            className='peer-focus:font-medium absolute text-sm text-gray-300
+                            className='peer-focus:font-medium absolute text-lg md:text-sm text-gray-300
                    duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] 
                   peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto 
                   peer-focus:text-yellow-600 peer-focus:dark:text-yellow-500 peer-placeholder-shown:scale-100 
@@ -193,19 +194,19 @@ export default function Modal({ showModal, setShowModal }) {
                             </div>
                           ) : null}
                         </div>
-                        <div className='relative z-0 w-full mb-6 group'>
+                        <div className='relative z-0 w-full mb-5  '>
                           <Field
                             type='date'
                             name='date'
                             id='date'
-                            className='block py-2.5 px-2 w-full text-sm text-gray-300 bg-transparent border-0 border-b-2 
+                            className='block py-2.5 px-0 w-full text-lg md:text-sm text-gray-300 bg-transparent border-0 border-b-2 
                   border-gray-300 appearance-none 
                      focus:outline-none focus:ring-0 focus:border-yellow-600 peer'
                             placeholder=' '
                           />
                           <label
                             htmlFor='date'
-                            className='peer-focus:font-medium absolute text-sm text-gray-300
+                            className='peer-focus:font-medium absolute text-lg md:text-sm text-gray-300
                    duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] 
                   peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto 
                   peer-focus:text-yellow-600 peer-focus:dark:text-yellow-500 peer-placeholder-shown:scale-100 
@@ -219,19 +220,19 @@ export default function Modal({ showModal, setShowModal }) {
                             </div>
                           ) : null}
                         </div>
-                        <div className='relative z-0 w-full    mb-6 group'>
+                        <div className='relative z-0 w-full    mb-5  '>
                           <Field
                             type='time'
                             name='time'
                             id='time'
-                            className='block py-2.5 px-2 w-full text-sm text-gray-300 bg-transparent border-0 border-b-2 
+                            className='block py-2.5 px-0 w-full text-lg md:text-sm text-gray-300 bg-transparent border-0 border-b-2 
                   border-gray-300 appearance-none 
                      focus:outline-none focus:ring-0 focus:border-yellow-600 peer'
                             placeholder=' '
                           />
                           <label
                             htmlFor='time'
-                            className='peer-focus:font-medium absolute text-sm text-gray-300
+                            className='peer-focus:font-medium absolute text-lg md:text-sm text-gray-300
                    duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] 
                   peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto 
                   peer-focus:text-yellow-600 peer-focus:dark:text-yellow-500 peer-placeholder-shown:scale-100 
@@ -247,7 +248,7 @@ export default function Modal({ showModal, setShowModal }) {
                         </div>
                         <button
                           type='submit'
-                          className='text-white bg-yellow-600 hover:bg-yellow-700 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center  '
+                          className='text-white bg-yellow-600 hover:bg-yellow-700 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-lg md:text-sm w-full sm:w-auto px-5 py-2.5 text-center  '
                         >
                           Submit
                         </button>

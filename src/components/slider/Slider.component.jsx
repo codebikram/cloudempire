@@ -34,54 +34,56 @@ const Slider = () => {
     setShowModal(true);
   };
   return (
-    <div>
-      <Swiper
-        navigation
-        pagination={{
-          dynamicBullets: true,
-        }}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: true,
-          pauseOnMouseEnter: true,
-        }}
-        modules={[Pagination, Navigation, Autoplay]}
-      >
-        {sliderData.map((item, i) => (
-          <SwiperSlide key={i}>
-            <div
-              className='bg-no-repeat bg-center flex items-center'
-              style={{
-                height: "550px",
-                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url(${item.url})`,
-                backgroundSize: "cover",
-              }}
-            >
-              <div className='text-white flex flex-col gap-6 p-10 sm:p-20 lg:p-28'>
-                <h1
-                  className='text-4xl sm:text-5xl lg:text-7xl font-bold
+    <>
+      <div>
+        <Swiper
+          navigation
+          pagination={{
+            dynamicBullets: true,
+          }}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: true,
+            pauseOnMouseEnter: true,
+          }}
+          modules={[Pagination, Navigation, Autoplay]}
+        >
+          {sliderData.map((item, i) => (
+            <SwiperSlide key={i}>
+              <div
+                className='bg-no-repeat bg-center flex items-center'
+                style={{
+                  height: "550px",
+                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url(${item.url})`,
+                  backgroundSize: "cover",
+                }}
+              >
+                <div className='text-white flex flex-col gap-6 p-10 sm:p-20 lg:p-28'>
+                  <h1
+                    className='text-4xl sm:text-5xl lg:text-7xl font-bold
                   text-robo'
-                >
-                  {item.text}
-                </h1>
-                <p className='text-base sm:text-lg lg:text-xl font-semibold'>
-                  {item.description}
-                </p>
-                <button
-                  onClick={handleClick}
-                  className='text-sm md:text-base bg-yellow-600 self-start
+                  >
+                    {item.text}
+                  </h1>
+                  <p className='text-base sm:text-lg lg:text-xl font-semibold'>
+                    {item.description}
+                  </p>
+                  <button
+                    onClick={handleClick}
+                    className='text-sm md:text-base bg-yellow-600 self-start
                   text-white font-bold rounded-md p-4 hover:from-yellow-700
                   hover:bg-yellow-700'
-                >
-                  Get a Free Consultation
-                </button>
+                  >
+                    Get a Free Consultation
+                  </button>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
       <Modal showModal={showModal} setShowModal={setShowModal} />
-    </div>
+    </>
   );
 };
 
