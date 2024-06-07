@@ -3,6 +3,7 @@ import { LiaPeopleCarrySolid } from "react-icons/lia";
 import { CiMail } from "react-icons/ci";
 import { useChangeTitle } from "../../utills";
 import Modal from "../modal/Modal.component";
+import Button from "../button/Button.component";
 
 const Contact = () => {
   const [showModal, setShowModal] = useState(false);
@@ -54,14 +55,7 @@ const Contact = () => {
                 Need guidance or have a question? We're here to help. Reach out
                 for a consultation and let's explore the solutions together.
               </p>
-              <button
-                className='bg-yellow-600  text-white font-bold rounded-md p-4 hover:from-yellow-700 hover:bg-yellow-700'
-                onClick={() => {
-                  setShowModal(true);
-                }}
-              >
-                Get a Free Consultation
-              </button>
+              <Button />
             </div>
           </article>
         </div>

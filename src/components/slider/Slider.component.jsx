@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css/bundle";
 import slider1 from "../../assets/slider/slider1.jpeg";
 import slider2 from "../../assets/slider/slider2.jpeg";
 import slider3 from "../../assets/slider/slider3.jpeg";
-import Modal from "../modal/Modal.component";
+// import Modal from "../modal/Modal.component";
+import Button from "../button/Button.component";
 
 const Slider = () => {
-  const [showModal, setShowModal] = useState(false);
-
   const sliderData = [
     {
       text: "Get a premium class service",
@@ -31,9 +30,7 @@ const Slider = () => {
       url: slider2,
     },
   ];
-  const handleClick = () => {
-    setShowModal(true);
-  };
+
   return (
     <>
       <div>
@@ -69,21 +66,13 @@ const Slider = () => {
                   <p className='text-base sm:text-lg lg:text-xl font-semibold'>
                     {item.description}
                   </p>
-                  <button
-                    onClick={handleClick}
-                    className='text-sm md:text-base bg-yellow-600 self-start
-                  text-white font-bold rounded-md p-4 hover:from-yellow-700
-                  hover:bg-yellow-700'
-                  >
-                    Get a Free Consultation
-                  </button>
+                  <Button className='self-start' />
                 </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
-      <Modal showModal={showModal} setShowModal={setShowModal} />
     </>
   );
 };

@@ -23,6 +23,13 @@ export default function Modal({ showModal, setShowModal }) {
     name: Yup.string()
       .required("Name is required!")
       .min(2, "Your name should have at least 2 charcters!"),
+    message: Yup.string()
+      .required("Message is required!")
+      .min(5, "Your message should have at least 5 charcters!"),
+    date: Yup.date()
+      .min(new Date("01-01-2019"))
+      .max(new Date())
+      .required("Date is required!"),
   });
   return ReactDOM.createPortal(
     <>
@@ -32,7 +39,7 @@ export default function Modal({ showModal, setShowModal }) {
             initial={{ opacity: 0, y: -80 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, ease: "easeIn" }}
-            className='flex justify-center overflow-x-hidden overflow-y-auto absolute top-0 left-0 right-0 h-screen z-50 outline-none focus:outline-none '
+            className='flex justify-center overflow-x-hidden overflow-y-auto fixed inset-0 w-screen h-screen z-50 outline-none focus:outline-none'
           >
             <div className='relative w-auto my-6 mx-auto max-w-3xl'>
               {/*content*/}
