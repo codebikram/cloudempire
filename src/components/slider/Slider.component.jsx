@@ -2,35 +2,10 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css/bundle";
-import slider1 from "../../assets/slider/slider1.jpeg";
-import slider2 from "../../assets/slider/slider2.jpeg";
-import slider3 from "../../assets/slider/slider3.jpeg";
-// import Modal from "../modal/Modal.component";
 import Button from "../button/Button.component";
+import { SLIDER_DATA } from "../../data/data.js";
 
 const Slider = () => {
-  const sliderData = [
-    {
-      text: "Get a premium class service",
-      description:
-        "Empowering Your Vision with Expert Guidance and Proven Strategies",
-      url: slider3,
-    },
-    {
-      text: "Grow your business without any technical hessle",
-      description:
-        "Empowering Your Vision with Expert Guidance and Proven Strategies",
-      url: slider1,
-    },
-
-    {
-      text: "Create and grow your business with us",
-      description:
-        "Empowering Your Vision with Expert Guidance and Proven Strategies",
-      url: slider2,
-    },
-  ];
-
   return (
     <>
       <div>
@@ -46,7 +21,7 @@ const Slider = () => {
           }}
           modules={[Pagination, Navigation, Autoplay]}
         >
-          {sliderData.map((item, i) => (
+          {SLIDER_DATA.map((item, i) => (
             <SwiperSlide key={i}>
               <div
                 className='bg-no-repeat bg-center flex items-center'

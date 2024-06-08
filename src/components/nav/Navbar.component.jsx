@@ -1,27 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { NavLink, Outlet } from "react-router-dom";
 import Footer from "../footer/Footer.component";
-import logo from "../../assets/Cloudempire_Logo.png";
+import logo from "../../assets/app-logo/Cloudempire_Logo.png";
+import { LINKS } from "../../data/data.js";
 const Navbar = () => {
   const [navBar, setNavBar] = useState(false);
   const [show, setShow] = useState(false);
-
-  const links = [
-    {
-      label: "Home",
-      href: "/",
-    },
-    {
-      label: "Blogs",
-      href: "/blogs",
-    },
-    {
-      label: "Contact Us",
-      href: "/contact",
-    },
-  ];
 
   const handleClick = () => {
     setShow((prev) => !prev);
@@ -39,7 +25,13 @@ const Navbar = () => {
       setNavBar(false);
     }
   };
-  window.addEventListener("scroll", changeBackgroundColor);
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeBackgroundColor);
+    return () => {
+      window.removeEventListener("scroll", changeBackgroundColor);
+    };
+  }, []);
 
   return (
     <>
@@ -60,7 +52,7 @@ const Navbar = () => {
           {!show ? <GiHamburgerMenu /> : <IoMdClose />}
         </button>
         <ul className='hidden md:flex md:gap-10'>
-          {links.map((item, i) => (
+          {LINKS.map((item, i) => (
             <li key={i} className=''>
               <NavLink
                 to={item.href}
@@ -80,7 +72,7 @@ const Navbar = () => {
               : "hidden"
           }`}
         >
-          {links.map((item, i) => (
+          {LINKS.map((item, i) => (
             <li key={i} onClick={handleClick}>
               <NavLink
                 to={item.href}
