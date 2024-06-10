@@ -46,7 +46,11 @@ const Navbar = () => {
           to='/'
           className='font-bold text-3xl bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-800 bg-clip-text text-transparent'
         >
-          <img src={logo} alt='cloud empire logo' className='w-52 h-12' />
+          <img
+            src={logo}
+            alt='cloud empire logo'
+            className='w-full h-12 object-contain'
+          />
         </NavLink>
         <button className='md:hidden' onClick={handleClick}>
           {!show ? <GiHamburgerMenu /> : <IoMdClose />}

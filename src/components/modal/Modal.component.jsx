@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
@@ -6,6 +6,12 @@ import { IoMdClose } from "react-icons/io";
 import { motion } from "framer-motion";
 
 export default function Modal({ showModal, setShowModal }) {
+  // const [domReady, setDomReady] = useState(false);
+
+  // useEffect(() => {
+  //   setDomReady(true);
+  // }, []);
+
   useEffect(() => {
     if (showModal) {
       document.body.style.overflow = "hidden";
@@ -32,7 +38,7 @@ export default function Modal({ showModal, setShowModal }) {
       .required("Date is required!"),
   });
   return ReactDOM.createPortal(
-    <>
+    <Fragment>
       {showModal ? (
         <>
           <motion.div
@@ -285,7 +291,7 @@ export default function Modal({ showModal, setShowModal }) {
           <div className='opacity-25 fixed inset-0 z-40 bg-black'></div>
         </>
       ) : null}
-    </>,
+    </Fragment>,
     document.getElementById("portal")
   );
 }

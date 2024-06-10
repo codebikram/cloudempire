@@ -23,4 +23,7 @@
   .figure:hover .show {
     opacity: 1;
   }
+  .card :hover {
+    scale: 1.05;
+  }
 }
