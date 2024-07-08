@@ -1,14 +1,15 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Blog from "./components/pages/Blog.component";
-import Home from "./components/pages/Home.component";
-import Contact from "./components/pages/Contact.component";
-import Navbar from "./components/nav/Navbar.component";
-import ErrorPage from "./components/error/Error.component";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Blog from './components/pages/Blog.component';
+import Home from './components/pages/Home.component';
+import Contact from './components/pages/Contact.component';
+import Navbar from './components/nav/Navbar.component';
+import ErrorPage from './components/error/Error.component';
+import BlogItem from './components/pages/BlogItem.component';
 
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: '/',
       element: <Navbar />,
       errorElement: <ErrorPage />,
       children: [
@@ -17,12 +18,16 @@ function App() {
           element: <Home />,
         },
         {
-          path: "blogs",
+          path: 'blogs',
           element: <Blog />,
         },
         {
-          path: "contact",
+          path: 'contact',
           element: <Contact />,
+        },
+        {
+          path: 'blogs/:blogId',
+          element: <BlogItem />,
         },
       ],
     },

@@ -11,7 +11,7 @@ const FeatureCard = ({ data }) => {
         delay: 0.25,
       }}
       viewport={{ once: true }}
-      className='p-6 bg-no-repeat bg-cover bg-center rounded-md shadow-md bg-blend-normal bg-black    w-full h-72 hover:bg-blend-multiply figure duration-1000 flex justify-center items-center relative'
+      className='p-6 bg-no-repeat bg-cover bg-center rounded-md shadow-md bg-blend-normal bg-black w-full h-72 hover:bg-blend-multiply figure duration-1000 flex justify-center items-center relative'
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('${data.imageUrl}')`,
       }}
