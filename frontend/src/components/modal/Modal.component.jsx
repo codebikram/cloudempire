@@ -20,7 +20,10 @@ export default function Modal({ showModal, setShowModal }) {
     }
   }, [showModal]);
 
-  const handleSubmit = () => {};
+  const handleSubmit = (values, { resetForm }) => {
+    console.log(values);
+    resetForm();
+  };
   const validationSchema = Yup.object().shape({
     email: Yup.string()
       .email("Enter a valid email!")
@@ -32,10 +35,7 @@ export default function Modal({ showModal, setShowModal }) {
     message: Yup.string()
       .required("Message is required!")
       .min(5, "Your message should have at least 5 charcters!"),
-    date: Yup.date()
-      .min(new Date("01-01-2019"))
-      .max(new Date())
-      .required("Date is required!"),
+    date: Yup.date().min(new Date("01-01-2019")).required("Date is required!"),
   });
   return ReactDOM.createPortal(
     <Fragment>
@@ -68,7 +68,7 @@ export default function Modal({ showModal, setShowModal }) {
                 <div className='relative p-4 flex-auto'>
                   <Formik
                     initialValues={{
-                      service: "",
+                      service: "salesforce",
                       name: "",
                       email: "",
                       message: "",
