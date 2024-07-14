@@ -35,7 +35,7 @@ export default function Modal({ showModal, setShowModal }) {
     message: Yup.string()
       .required("Message is required!")
       .min(5, "Your message should have at least 5 charcters!"),
-    date: Yup.date().min(new Date("01-01-2019")).required("Date is required!"),
+    date: Yup.date().min(new Date()).required("Date is required!"),
   });
   return ReactDOM.createPortal(
     <Fragment>
