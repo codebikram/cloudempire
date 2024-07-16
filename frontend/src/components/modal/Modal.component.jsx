@@ -4,11 +4,16 @@ import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { IoMdClose } from 'react-icons/io';
 import { motion } from 'framer-motion';
+import axios from 'axios';
+import { useState } from 'react';
+import { MdErrorOutline } from 'react-icons/md';
 
 export default function Modal({ showModal, setShowModal }) {
+  const [message, setMessage] = useState(null);
+  const [error, setError] = useState('please');
   const options = [
     {
-      label: 'Salesforce',
+      label: 'salesforce',
       value: 'salesforce',
     },
     {
@@ -53,9 +58,25 @@ export default function Modal({ showModal, setShowModal }) {
     }
   }, [showModal]);
 
-  const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
-    resetForm();
+  const handleSubmit = async (values, { resetForm }) => {
+    try {
+      setMessage(null);
+      setError(null);
+      const res = await axios.post(
+        'http://localhost:5000/api/messages/add',
+        values
+      );
+      if (res.data.success) {
+        setMessage('We got your message, We will contact you shortly!');
+        resetForm();
+      } else {
+        setError(
+          'Something went wrong, Please enter all the details correctly'
+        );
+      }
+    } catch (error) {
+      setError('Something went wrong, Please enter all the details correctly');
+    }
   };
   const validationSchema = Yup.object().shape({
     email: Yup.string()
@@ -68,7 +89,7 @@ export default function Modal({ showModal, setShowModal }) {
     message: Yup.string()
       .required('Message is required!')
       .min(5, 'Your message should have at least 5 charcters!'),
-    date: Yup.date().min(new Date('01-01-2019')).required('Date is required!'),
+    date: Yup.date().min(new Date(Date.now())).required('Date is required!'),
   });
   return ReactDOM.createPortal(
     <Fragment>
@@ -92,6 +113,8 @@ export default function Modal({ showModal, setShowModal }) {
                     className=" font-bold text-2xl"
                     onClick={() => {
                       setShowModal(false);
+                      setMessage(null);
+                      setError(null);
                     }}
                   >
                     <IoMdClose />
@@ -99,6 +122,17 @@ export default function Modal({ showModal, setShowModal }) {
                 </div>
                 {/*body*/}
                 <div className="relative p-4 flex-auto">
+                  {message && (
+                    <p className="text-sm text-green-500 p-2 mb-2">{message}</p>
+                  )}
+                  {error && (
+                    <p className="text-sm text-red-500 p-2 mb-2">
+                      <span>
+                        <MdErrorOutline />
+                      </span>
+                      {error}
+                    </p>
+                  )}
                   <Formik
                     initialValues={{
                       service: 'salesforce',
@@ -119,7 +153,7 @@ export default function Modal({ showModal, setShowModal }) {
                             name="service"
                             id="service"
                             className="block py-2.5 px-0 w-full text-base md:text-sm text-gray-300 bg-transparent border-0 border-b-2 
-              border-gray-300 appearance-none 
+              border-gray-300 appearance-none capitalize 
                  focus:outline-none focus:ring-0 focus:border-yellow-600 peer"
                             placeholder=" "
                             autoComplete="off"
