@@ -7,10 +7,11 @@ import { motion } from 'framer-motion';
 import axios from 'axios';
 import { useState } from 'react';
 import { MdErrorOutline } from 'react-icons/md';
+import { FaRegCheckCircle } from 'react-icons/fa';
 
 export default function Modal({ showModal, setShowModal }) {
   const [message, setMessage] = useState(null);
-  const [error, setError] = useState('please');
+  const [error, setError] = useState(null);
   const options = [
     {
       label: 'salesforce',
@@ -123,14 +124,19 @@ export default function Modal({ showModal, setShowModal }) {
                 {/*body*/}
                 <div className="relative p-4 flex-auto">
                   {message && (
-                    <p className="text-sm text-green-500 p-2 mb-2">{message}</p>
+                    <p className="text-sm text-green-500 p-2 mb-2 flex items-center gap-2">
+                      <span>
+                        <FaRegCheckCircle />
+                      </span>
+                      <span>{message}</span>
+                    </p>
                   )}
                   {error && (
-                    <p className="text-sm text-red-500 p-2 mb-2">
+                    <p className="text-sm text-red-500 p-2 mb-2 flex items-center gap-2">
                       <span>
                         <MdErrorOutline />
                       </span>
-                      {error}
+                      <span>{error}</span>
                     </p>
                   )}
                   <Formik
