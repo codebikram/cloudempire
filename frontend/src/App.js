@@ -1,10 +1,12 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Blog from './components/pages/Blog.component';
-import Home from './components/pages/Home.component';
-import Contact from './components/pages/Contact.component';
-import Navbar from './components/nav/Navbar.component';
-import ErrorPage from './components/error/Error.component';
-import BlogItem from './components/pages/BlogItem.component';
+import Loading from './components/loader/Loading.component';
+import { lazy, Suspense } from 'react';
+const Navbar = lazy(() => import('./components/nav/Navbar.component'));
+const ErrorPage = lazy(() => import('./components/error/Error.component'));
+const BlogItem = lazy(() => import('./components/pages/BlogItem.component'));
+const Blog = lazy(() => import('./components/pages/Blog.component'));
+const Home = lazy(() => import('./components/pages/Home.component'));
+const Contact = lazy(() => import('./components/pages/Contact.component'));
 
 function App() {
   const router = createBrowserRouter([
@@ -32,7 +34,11 @@ function App() {
       ],
     },
   ]);
-  return <RouterProvider router={router} />;
+  return (
+    <Suspense fallback={<Loading />}>
+      <RouterProvider router={router} />
+    </Suspense>
+  );
 }
 
 export default App;

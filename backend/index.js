@@ -3,6 +3,7 @@ import express from 'express';
 import cors from 'cors';
 import db from './db.js';
 import postRoute from './routes/posts.route.js';
+import messageRoute from './routes/messages.route.js';
 const app = express();
 const PORT = process.env.PORT || 8000;
 
@@ -10,6 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use('/api/posts', postRoute);
+app.use('/api/messages', messageRoute);
 
 app.get('/', (req, res) => {
   res.send('Hello world');

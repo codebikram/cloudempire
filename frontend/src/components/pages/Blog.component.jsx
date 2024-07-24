@@ -12,8 +12,12 @@ const Blog = () => {
 
   useEffect(() => {
     (async () => {
-      const res = await axios.get('http://localhost:5000/api/posts/');
-      setBlogs(res.data);
+      try {
+        const res = await axios.get('http://localhost:5000/api/posts/');
+        setBlogs(res.data);
+      } catch (error) {
+        console.log(error);
+      }
     })();
   }, []);
 
@@ -27,7 +31,7 @@ const Blog = () => {
           {blogs &&
             blogs.map((blog) => (
               <article
-                className="bg-gray-800 text-white rounded-lg shadow-md"
+                className="bg-gray-800 text-white rounded-lg shadow-md hover:scale-105 duration-300 hover:shadow-lg"
                 key={blog.ID}
               >
                 <div className="p-8 flex flex-col gap-4 justify-center">
