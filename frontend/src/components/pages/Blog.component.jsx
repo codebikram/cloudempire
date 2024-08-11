@@ -1,15 +1,16 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
-import useFetch, { dateFormat, useChangeTitle } from "../../utills";
-import Search from "../search/Search.component";
-import Loading from "../loader/Loading.component";
-import { FaArrowRight } from "react-icons/fa";
-import DOMPurify from "dompurify";
-import { MdErrorOutline } from "react-icons/md";
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import useFetch, { dateFormat, useChangeTitle } from '../../utills';
+import Search from '../search/Search.component';
+import Loading from '../loader/Loading.component';
+import { FaArrowRight } from 'react-icons/fa';
+import DOMPurify from 'dompurify';
+import { MdErrorOutline } from 'react-icons/md';
+import Comment from '../comment/Comment.component';
 
 const Blog = () => {
   const location = useLocation();
-  useChangeTitle("Blogs - ");
+  useChangeTitle('Blogs - ');
   const urlParams = new URLSearchParams(location.search);
   const searchQuery = urlParams.toString();
   const { data, loading, error } = useFetch(
@@ -48,7 +49,7 @@ const Blog = () => {
                     className=''
                     dangerouslySetInnerHTML={{
                       __html: DOMPurify.sanitize(
-                        blog.post_content.slice(0, 445) + "..."
+                        blog.post_content.slice(0, 445) + '...'
                       ),
                     }}
                   ></p>
@@ -64,6 +65,7 @@ const Blog = () => {
         </div>
       </section>
       <Search />
+      <Comment />
     </>
   );
 };

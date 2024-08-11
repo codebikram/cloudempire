@@ -1,9 +1,10 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import DOMPurify from "dompurify";
-import useFetch, { dateFormat, useChangeTitle } from "../../utills";
-import { MdErrorOutline } from "react-icons/md";
-import Loading from "../loader/Loading.component";
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import DOMPurify from 'dompurify';
+import useFetch, { dateFormat, useChangeTitle } from '../../utills';
+import { MdErrorOutline } from 'react-icons/md';
+import Loading from '../loader/Loading.component';
+import Comment from '../comment/Comment.component';
 
 const BlogItem = () => {
   const params = useParams();
@@ -16,9 +17,8 @@ const BlogItem = () => {
       <h1 className='text-4xl md:text-5xl lg:text-6xl text-center font-semibold'>
         {data?.post_title}
       </h1>
-      {loading ? (
-        <Loading />
-      ) : (
+      {loading && <Loading />}
+      {!loading && !error && (
         <p className='text-base text-center pt-8'>
           {dateFormat(data?.post_date)}
           <span className='border ml-8  p-2 rounded-full bg-gray-800'>
@@ -42,6 +42,7 @@ const BlogItem = () => {
           }}
         ></article>
       </div>
+      <Comment />
     </section>
   );
 };
