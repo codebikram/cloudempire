@@ -1,7 +1,28 @@
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
+import AnimatedCounter from "../counter/AnimatedCounter.component";
 
 const TextSection = () => {
+  const data = [
+    {
+      text: "Time to time schedule",
+      from: 0,
+      to: 98,
+      sign: "%",
+    },
+    {
+      text: "Projects",
+      from: 0,
+      to: 30,
+      sign: "+",
+    },
+    {
+      text: "Brands",
+      from: 0,
+      to: 10,
+      sign: "+",
+    },
+  ];
   return (
     <>
       <article className='pt-16 pb-16 text-white flex flex-col gap-6 flex-wrap '>
@@ -25,6 +46,26 @@ const TextSection = () => {
           Cutting-Edge Solutions
         </p>
       </article>
+      <div className='flex flex-col sm:gap-3 gap-6 sm:flex-row justify-evenly items-center pt-8 pb-8'>
+        {data.map((item, i) => (
+          <div
+            className='flex flex-col flex-wrap items-center justify-center rounded-lg shadow-md cursor-pointer hover:!scale-105
+          !duration-300 hover:!shadow-lg h-[150px] w-full md:w-[300px] bg-gradient-to-b from-gray-500
+            to-gray-700'
+            key={i}
+          >
+            <AnimatedCounter
+              from={item.from}
+              to={item.to}
+              sign={item.sign}
+              className='font-mono sm:text-4xl text-3xl font-bold flex gap-1'
+            />
+            <h3 className='text-lg sm:text-base md:text-lg lg:text-xl font-semibold'>
+              {item.text}
+            </h3>
+          </div>
+        ))}
+      </div>
       <hr className=' md:mt-16 md:mb-16' />
       <article className='pt-16 pb-16 text-white flex flex-col gap-6 flex-wrap'>
         <h2 className='font-robo text-4xl md:text-5xl font-semibold'>
