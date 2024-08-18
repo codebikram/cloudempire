@@ -1,8 +1,8 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 export const useChangeTitle = (content) => {
   useEffect(() => {
-    document.title = content + "cloudempire.tech";
+    document.title = content + 'cloudempire.tech';
   }, [content]);
 };
 
@@ -26,7 +26,7 @@ const useFetch = (url) => {
         setLoading(false);
       } catch (error) {
         setLoading(false);
-        setError(error.message + " Please check your connection");
+        setError(error.message + ' Please check your connection');
       }
     })();
   }, [url]);

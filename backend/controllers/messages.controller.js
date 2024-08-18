@@ -8,7 +8,7 @@ export const addMessages = async (req, res, next) => {
     if (data.affectedRows === 1) {
       res.status(201).json({
         success: true,
-        message: 'Message added successfully',
+        message: 'Thank you for your message!',
         data: req.body,
       });
     }
