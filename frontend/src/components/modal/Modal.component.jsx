@@ -10,12 +10,8 @@ import { MdErrorOutline } from 'react-icons/md';
 import { FaRegCheckCircle } from 'react-icons/fa';
 
 export default function Modal({ showModal, setShowModal }) {
-  const [message, setMessage] = useState(
-    'We got your message, We will contact you shortly!'
-  );
-  const [error, setError] = useState(
-    'Something went wrong, Please enter all the details correctly'
-  );
+  const [message, setMessage] = useState(null);
+  const [error, setError] = useState(null);
   const options = [
     {
       label: 'salesforce',
