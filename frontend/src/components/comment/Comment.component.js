@@ -31,7 +31,7 @@ const Comment = ({ blogId }) => {
   };
   return (
     <div className="bg-gray-900 text-white">
-      <div className="p-8 sm:p-16 md:p-28 flex flex-col gap-6 ">
+      <div className="p-6 sm:p-16 md:p-28 flex flex-col gap-6 ">
         <h2 className="text-3xl font-semibold">Leave a Reply</h2>
         <p className="font-semibold">
           Your email address will not be published. Required fields are marked *
