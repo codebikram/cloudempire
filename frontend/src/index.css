@@ -53,6 +53,9 @@
   .blog-content pre {
     @apply p-4 text-lg border rounded-md;
   }
+  .blog-content code {
+    @apply text-sm sm:text-base md:text-lg;
+  }
   .blog-content img {
     @apply p-4 aspect-auto object-cover bg-no-repeat;
   }

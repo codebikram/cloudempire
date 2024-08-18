@@ -13,7 +13,7 @@ const BlogItem = () => {
   );
   useChangeTitle(data?.post_title);
   return (
-    <section className="p-4 pt-28 md:p-16 md:pt-28 min-h-screen text-white bg-gray-900">
+    <section className="p-8 pt-28 md:p-16 md:pt-28 min-h-screen text-white bg-gray-900">
       <h1 className="text-4xl md:text-5xl lg:text-6xl text-center font-semibold">
         {data?.post_title}
       </h1>
