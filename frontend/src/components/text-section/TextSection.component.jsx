@@ -4,7 +4,7 @@ import AnimatedCounter from '../counter/AnimatedCounter.component';
 import useFetch from '../../utills';
 
 const TextSection = () => {
-  const { data } = useFetch('http://localhost:5000/api/info');
+  const { data } = useFetch(`${process.env.REACT_APP_BACKEND_URL}/api/info`);
   let informations = [];
   if (data) {
     informations = [
