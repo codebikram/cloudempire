@@ -2,16 +2,13 @@ import db from '../db.js';
 
 export const addComment = async (req, res, next) => {
   try {
-    const ip =
-      req.headers['x-real-ip'] ||
-      req.headers['x-forwarded-for'] ||
-      req.ip ||
-      req.headers['cf-connecting-ip'] ||
-      req.socket.remoteAddress ||
-      '';
-
-    console.log(ip);
-
+    const forwardedFor = req.headers['x-forwarded-for'];
+    const ip = forwardedFor
+      ? forwardedFor.split(',')[0].trim()
+      : req.headers['x-real-ip'] ||
+        req.headers['cf-connecting-ip'] ||
+        req.socket.remoteAddress ||
+        '';
     const details = {
       comment_post_ID: req.body.comment_post_ID,
       comment_author: req.body.name,
